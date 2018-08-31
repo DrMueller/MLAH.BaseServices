@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "@drmueller/ng-base-services": {
+      "root": "projects/drmueller/ng-base-services",
+      "sourceRoot": "projects/drmueller/ng-base-services/src",
+      "projectType": "library",
+      "prefix": "drm",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/drmueller/ng-base-services/tsconfig.lib.json",
+            "project": "projects/drmueller/ng-base-services/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/drmueller/ng-base-services/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/drmueller/ng-base-services/src/test.ts",
+            "tsConfig": "projects/drmueller/ng-base-services/tsconfig.spec.json",
+            "karmaConfig": "projects/drmueller/ng-base-services/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/drmueller/ng-base-services/tsconfig.lib.json",
+              "projects/drmueller/ng-base-services/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-base-services-demo"
