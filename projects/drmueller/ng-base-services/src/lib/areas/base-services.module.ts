@@ -6,8 +6,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 @NgModule({
   imports: [
     CommonModule,
-  ],
-
+  ]
 })
 export class BaseServicesModule {
   public static forRoot(): ModuleWithProviders {
