@@ -10,7 +10,7 @@ function getPackageFiles() {
   # $mainPackage = Get-ChildItem -File ($PSScriptRoot + '/../*package.json')
   # $packageFiles.Add($mainPackage)
 
-  $libPackages = Get-ChildItem -File ($PSScriptRoot + '/../projects/package.json') -Recurse -Force
+  $libPackages = Get-ChildItem -Directory ($PSScriptRoot + '/../projects/package.json') -Recurse -Force
 
   foreach ($libPackage in $libPackages) {
     $packageFiles.Add($libPackage)
@@ -43,7 +43,7 @@ foreach ($packageFile in $packageFiles) {
   # The git commands are needed, since version can only be updated on a clean git repo --> https://github.com/npm/npm/issues/6879
   git add .
   git commit -am 'auto'
-  
+
   npm version $buildVersion
 
   # $packageContent = Get-Content $packageFile
