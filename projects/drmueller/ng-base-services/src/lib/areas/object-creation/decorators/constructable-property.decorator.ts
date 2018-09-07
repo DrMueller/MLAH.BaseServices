@@ -1,7 +1,8 @@
-/// <reference path="../../../../../../../../node_modules/reflect-metadata/Reflect.d.ts" />.
 import { IParameterlessConstructor } from '@drmueller/language-extensions';
 
 export const CTOR_PROP_KEY_PREFIX = 'ConstructableProperty';
+
+declare const Reflect: any;
 
 export function ConstructableProperty<T>(ctor: IParameterlessConstructor<T>) {
   return function (target: object, propertyKey: string) {

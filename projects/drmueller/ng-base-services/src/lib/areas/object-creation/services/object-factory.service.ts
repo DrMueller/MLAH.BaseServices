@@ -4,6 +4,8 @@ import { IParameterlessConstructor } from '@drmueller/language-extensions';
 
 import { CTOR_PROP_KEY_PREFIX } from '../decorators';
 
+declare const Reflect: any;
+
 @Injectable()
 export class ObjectFactoryService {
   public createArray<T>(sourceCollection: any[], ctorFn: IParameterlessConstructor<T>): T[] {
