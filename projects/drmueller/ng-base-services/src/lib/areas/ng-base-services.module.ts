@@ -8,10 +8,10 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
     CommonModule,
   ]
 })
-export class BaseServicesModule {
+export class NgBaseServicesModule {
   public static forRoot(): ModuleWithProviders {
     return {
-      ngModule: BaseServicesModule,
+      ngModule: NgBaseServicesModule,
       providers: [
         objectCreation.ObjectFactoryService
       ]

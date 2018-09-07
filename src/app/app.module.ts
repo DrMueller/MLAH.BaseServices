@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { BaseServicesModule } from '../../projects/drmueller/ng-base-services/src/public_api';
+import { NgBaseServicesModule } from '../../projects/drmueller/ng-base-services/src/public_api';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { BaseServicesModule } from '../../projects/drmueller/ng-base-services/sr
   ],
   imports: [
     BrowserModule,
-    BaseServicesModule.forRoot()
+    NgBaseServicesModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
