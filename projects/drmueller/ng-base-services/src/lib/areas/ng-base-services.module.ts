@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 
-import * as objectCreation from './object-creation';
+import * as objectCreation from './object-creation/index';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 
 @NgModule({

@@ -1,2 +1,2 @@
-export * from './services';
-export * from './decorators';
+export * from './services/index';
+export * from './decorators/index';
