@@ -12,14 +12,21 @@ import { HttpBaseServant } from './servants';
 export abstract class HttpBaseService {
   protected constructor(
     private httpClient: HttpClient,
-    private objectFactoryService: ObjectFactoryService,
-    private baseUrl: string) { }
+    private objectFactoryService: ObjectFactoryService) { }
+
+  public async deleteAsync(relativeUrl: string): Promise<void> {
+    const completeUrl = await this.createCompleteUrlAsync(relativeUrl);
+    const requestOptions = HttpBaseServant.createOptions();
+    const result = this.processResponse<void>(this.httpClient.delete<void>(completeUrl, requestOptions));
+
+    return result;
+  }
 
   public async getArrayAsync<T>(
     relativeUrl: string,
     ctor: IParameterlessConstructor<T>): Promise<T[]> {
 
-    const completeUrl = this.createCompleteUrl(relativeUrl);
+    const completeUrl = await this.createCompleteUrlAsync(relativeUrl);
     const requestOptions = HttpBaseServant.createOptions();
     const array = await this.processResponse(this.httpClient.get<T[]>(completeUrl, requestOptions));
 
@@ -31,53 +38,48 @@ export abstract class HttpBaseService {
     return arrayResult;
   }
 
-  public deleteAsync(relativeUrl: string): Promise<void> {
-    const completeUrl = this.createCompleteUrl(relativeUrl);
-    const requestOptions = HttpBaseServant.createOptions();
-    const result = this.processResponse<void>(this.httpClient.delete<void>(completeUrl, requestOptions));
-
-    return result;
-  }
-
-  public getAsync<T>(relativeUrl: string, ctor: IParameterlessConstructor<T> | null = null): Promise<T> {
-    const completeUrl = HttpBaseServant.createCompleteUrl(this.baseUrl, relativeUrl);
+  public async getAsync<T>(relativeUrl: string, ctor: IParameterlessConstructor<T> | null = null): Promise<T> {
+    const completeUrl = await this.createCompleteUrlAsync(relativeUrl);
     const requestOptions = HttpBaseServant.createOptions();
 
     return this.processResponse(this.httpClient.get<T>(completeUrl, requestOptions), ctor);
   }
 
-  public patchAsync<T>(relativeUrl: string,
+  public async patchAsync<T>(relativeUrl: string,
     body: any,
     ctor: IParameterlessConstructor<T> | null = null,
     contentType: ContentType = ContentType.ApplicationJson): Promise<T> {
-    const completeUrl = this.createCompleteUrl(relativeUrl);
+    const completeUrl = await this.createCompleteUrlAsync(relativeUrl);
     const requestOptions = HttpBaseServant.createOptions(contentType);
     return this.processResponse<T>(this.httpClient.patch<T>(completeUrl, body, requestOptions), ctor);
   }
 
-  public postAsync<T>(
+  public async postAsync<T>(
     relativeUrl: string,
     body: any,
     ctor: IParameterlessConstructor<T> | null = null,
     contentType: ContentType = ContentType.ApplicationJson): Promise<T> {
-    const completeUrl = this.createCompleteUrl(relativeUrl);
+    const completeUrl = await this.createCompleteUrlAsync(relativeUrl);
 
     const requestOptions = HttpBaseServant.createOptions(contentType);
     return this.processResponse(this.httpClient.post<T>(completeUrl, body, requestOptions), ctor);
   }
 
-  public putAsync<T>(
+  public async putAsync<T>(
     relativeUrl: string,
     body: any,
     ctor: IParameterlessConstructor<T> | null = null,
     contentType: ContentType = ContentType.ApplicationJson): Promise<T> {
-    const completeUrl = this.createCompleteUrl(relativeUrl);
+    const completeUrl = await this.createCompleteUrlAsync(relativeUrl);
     const requestOptions = HttpBaseServant.createOptions(contentType);
     return this.processResponse(this.httpClient.put<T>(completeUrl, body, requestOptions), ctor);
   }
 
-  private createCompleteUrl(relativeUrl: string): string {
-    return HttpBaseServant.createCompleteUrl(this.baseUrl, relativeUrl);
+  protected abstract getBaseUrlAsync(): Promise<string>;
+
+  private async createCompleteUrlAsync(relativeUrl: string): Promise<string> {
+    const baseUrl = await this.getBaseUrlAsync();
+    return HttpBaseServant.createCompleteUrlAsync(baseUrl, relativeUrl);
   }
 
   private processResponse<T>(response: Observable<T>, ctor: IParameterlessConstructor<T> | null = null): Promise<T> {

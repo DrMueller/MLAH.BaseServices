@@ -18,7 +18,7 @@ export class HttpBaseServant {
     return httpOptions;
   }
 
-  public static createCompleteUrl(baseUrl: string, relativeUrl: string): string {
+  public static createCompleteUrlAsync(baseUrl: string, relativeUrl: string): string {
     let result = baseUrl;
     if (!result.endsWith('/')) {
       result += '/';
