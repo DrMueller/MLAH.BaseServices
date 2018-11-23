@@ -8,10 +8,10 @@
     ]
   },
   "files": [
-    "src/test.ts"
+    "main-integration-tests.ts"
   ],
   "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
+    "src/integration-tests/**/*.spec.ts",
+    "src/integration-tests/**/*.d.ts"
   ]
 }

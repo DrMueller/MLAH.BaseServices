@@ -8,8 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test-lib": "ng test @drmueller/ng-base-services",
-    "test-lib-headless": "ng test @drmueller/ng-base-services --browsers=ChromeHeadless --watch=false"
+    "test-lib": "ng run @drmueller/ng-base-services:test",
+    "test-lib-headless": "ng run @drmueller/ng-base-services:test --browsers=ChromeHeadless --watch=false",
+    "unit-test-lib": "ng run @drmueller/ng-base-services:unit-test",
+    "integration-test-lib": "ng run @drmueller/ng-base-services:integration-test"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +25,7 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "@drmueller/language-extensions": "^1.0.31",
+    "@drmueller/testing": "^2.0.3",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
