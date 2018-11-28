@@ -161,7 +161,7 @@
           "options": {
             "tsConfig": [
               "projects/drmueller/ng-base-services/tsconfig.lib.json",
-              "projects/drmueller/ng-base-services/tsconfig.spec.json"
+              "projects/drmueller/ng-base-services/tsconfig.unit-tests.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
