@@ -1,0 +1,32 @@
+<div *ngIf="individual">
+  <h3>{{ title }}</h3>
+  <div class="card individual-details-commands__card">
+    <h5 class="card-title">Commands</h5>
+
+    <div class="card-body">
+      <span class="individual-details-commands__button">
+        <button class="btn btn-primary" (click)="saveIndividualAsync()" [disabled]="!canSaveIndividual">Save Individual</button>
+      </span>
+      <span class="individual-details-commands__button">
+        <button class="btn btn-warning" (click)="cancel()">Cancel</button>
+      </span>
+    </div>
+  </div>
+
+  <div class="card" class="individual-details__fields">
+    <form class="form" [formGroup]="individualFormGroup">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" [ngClass]="getValidityClass('firstName')" id=" firstName" placeholder="Enter First Name"
+          formControlName="firstName">
+        <app-validation-errors [formControlToValidate]="individualFormGroup.controls['firstName']"></app-validation-errors>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" [ngClass]="getValidityClass('lastName')" id="lastName" placeholder="Enter Last Name"
+          formControlName="lastName">
+        <app-validation-errors [formControlToValidate]="individualFormGroup.controls['lastName']"></app-validation-errors>
+      </div>
+    </form>
+  </div>
+</div>
