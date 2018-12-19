@@ -1,19 +1,13 @@
-import { Injectable } from '@angular/core';
-
+import { IDataProviderservice, IDtoAdapterService } from '../';
 import { BaseLocalStorageRepositoryService } from '../../../../local-storage/services';
-import { DtoOperationResult, AllDtosFetchingResult } from '../../models';
-import { IDataProviderservice, IDtoAdapterService } from '..';
+import { AllDtosFetchingResult, DtoOperationResult } from '../../models';
 
-@Injectable({
-  providedIn: 'root'
-})
 export abstract class BaseDataProviderService<TModel> implements IDataProviderservice {
   private adapters: IDtoAdapterService<TModel, any>[];
 
   public constructor(
     private repository: BaseLocalStorageRepositoryService<TModel>,
     adapters: IDtoAdapterService<TModel, any>[]) {
-
     this.adapters = adapters.filter(adapter => adapter.modelTypeName === this.modelTypeName);
   }
 

@@ -8,11 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-lib-prod": "ng run  @drmueller/ng-base-services:test --prod --output-path=dist",
-    "test-lib": "ng run @drmueller/ng-base-services:test",
-    "test-lib-headless": "ng run @drmueller/ng-base-services:test --browsers=ChromeHeadless --watch=false",
-    "unit-test-lib": "ng run @drmueller/ng-base-services:unit-test",
-    "integration-test-lib": "ng run @drmueller/ng-base-services:integration-test"
+    "build-lib-prod": "ng build @drmueller/ng-base-services --prod",
+    "unit-test-lib": "ng run @drmueller/ng-base-services:unit-test"
   },
   "private": true,
   "dependencies": {
