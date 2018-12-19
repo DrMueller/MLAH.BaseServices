@@ -9,10 +9,10 @@ export class DemonstratorNavigationService {
   public constructor(private router: Router) { }
 
   public navigateToOverview(): void {
-    this.router.navigate(['overview']);
+    this.router.navigate(['demonstrator']);
   }
 
-  public navigateToErrorHandlingDemo(): void {
-    this.router.navigate(['errorhandling']);
+  public navigateToObjectCreation(): void {
+    this.router.navigate(['obj']);
   }
 }

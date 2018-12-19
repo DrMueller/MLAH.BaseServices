@@ -6,7 +6,9 @@ import { CTOR_PROP_KEY_PREFIX } from '../decorators';
 
 declare const Reflect: any;
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ObjectFactoryService {
   public createArray<T>(sourceCollection: any[], ctorFn: IParameterlessConstructor<T>): T[] {
     const result = new Array<T>();

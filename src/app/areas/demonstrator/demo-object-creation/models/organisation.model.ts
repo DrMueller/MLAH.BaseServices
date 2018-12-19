@@ -5,10 +5,10 @@ import { Individual } from './individual.model';
 export class Organisation {
 
   @ConstructableProperty(Individual)
-  public individual: Individual | undefined = undefined;
+  public individual: Individual;
 
   @ConstructableProperty(Individual)
-  public individuals: Individual[] | undefined = undefined;
-  public coName: string | undefined = undefined;
-  public name: string | undefined = undefined;
+  public individuals: Individual[];
+  public coName: string;
+  public name: string;
 }

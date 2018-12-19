@@ -2,19 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import {
-    HttpBaseService, ObjectFactoryService
+  HttpBaseService, ObjectFactoryService
 } from 'projects/drmueller/ng-base-services/src/public_api';
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class IndividualOverviewHttpService extends HttpBaseService {
+  public static readonly RelativePath = 'IndividualOverview';
+
   public constructor(httpClient: HttpClient, objectFactoryService: ObjectFactoryService) {
     super(httpClient, objectFactoryService);
   }
 
   protected getBaseUrlAsync(): Promise<string> {
-    return Promise.resolve('api/IndividualOverview');
+    return Promise.resolve(`api/${IndividualOverviewHttpService.RelativePath}`);
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IndividualOverviewDataService } from '../../services';
 import { IndividualOverviewEntry } from '../../models';
-import { IndividualsNavigationService } from '../../../common/services';
+import { IndividualsNavigationService } from '../../../common/navigation/services';
 
 @Component({
   selector: 'app-individuals-overview',
@@ -9,7 +9,6 @@ import { IndividualsNavigationService } from '../../../common/services';
   styleUrls: ['./individuals-overview.component.scss']
 })
 export class IndividualsOverviewComponent implements OnInit {
-
   public overviewEntries: IndividualOverviewEntry[] = [];
   public selectedIndividual: IndividualOverviewEntry | null = null;
 

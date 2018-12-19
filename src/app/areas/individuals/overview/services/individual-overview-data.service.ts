@@ -6,7 +6,6 @@ import { IndividualOverviewHttpService } from './individual-overview-http.servic
   providedIn: 'root'
 })
 export class IndividualOverviewDataService {
-
   public constructor(private http: IndividualOverviewHttpService) {
   }
 

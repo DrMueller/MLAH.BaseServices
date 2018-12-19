@@ -4,9 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 
 import { RxFormModelBindingService } from 'src/app/infrastructure/shared-features/rx-forms';
 
-import { IndividualsNavigationService } from '../../../common/services';
 import { IndividualDetails } from '../../models';
 import { IndividualDetailsDataService, IndividualDetailsFormBuilderService } from '../../services';
+import { IndividualsNavigationService } from '../../../common/navigation/services';
 
 @Component({
   selector: 'app-individual-details',

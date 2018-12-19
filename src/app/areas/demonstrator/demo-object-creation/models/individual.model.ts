@@ -5,12 +5,12 @@ import { Address } from './address.model';
 export class Individual {
 
   @ConstructableProperty(Address)
-  public address: Address | undefined = undefined;
+  public address: Address;
   @ConstructableProperty(Address)
-  public address2: Address | undefined = undefined;
-  public firstName: string | undefined = undefined;
-  public id: string | undefined = undefined;
-  public lastName: string | undefined = undefined;
+  public address2: Address;
+  public firstName: string;
+  public id: string;
+  public lastName: string;
   public static createSome(): Individual[] {
     const result = [
       <Individual>{

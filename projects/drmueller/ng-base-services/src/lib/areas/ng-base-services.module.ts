@@ -1,7 +1,5 @@
 import { CommonModule } from '@angular/common';
-
-import * as objectCreation from './object-creation/index';
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [
@@ -9,12 +7,4 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
   ]
 })
 export class NgBaseServicesModule {
-  public static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: NgBaseServicesModule,
-      providers: [
-        objectCreation.ObjectFactoryService
-      ]
-    };
-  }
 }

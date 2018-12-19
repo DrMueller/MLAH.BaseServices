@@ -1,16 +1,18 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
+import {
+  DemoObjectCreationComponent
+} from './demo-object-creation/components/demo-object-creation';
 import { DemonstratorRoutingModule } from './demonstrator-routing.module';
-import { DemoErrorHandlingComponent } from './demo-error-handling/components/demo-error-handling';
 import { DemonstratorComponent } from './demonstrator.component';
 import { DemonstratorOverviewComponent } from './overview/components/demonstrator-overview';
 
 @NgModule({
   declarations: [
-    DemoErrorHandlingComponent,
     DemonstratorComponent,
-    DemonstratorOverviewComponent
+    DemonstratorOverviewComponent,
+    DemoObjectCreationComponent
   ],
   imports: [
     CommonModule,

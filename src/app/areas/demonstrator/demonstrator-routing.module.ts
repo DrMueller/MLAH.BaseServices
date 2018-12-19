@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
+import {
+  DemoObjectCreationComponent
+} from './demo-object-creation/components/demo-object-creation';
 import { DemonstratorComponent } from './demonstrator.component';
 import { DemonstratorOverviewComponent } from './overview/components/demonstrator-overview';
-import { DemoErrorHandlingComponent } from './demo-error-handling/components/demo-error-handling';
 
 const routes: Routes = [
   {
@@ -17,8 +20,8 @@ const routes: Routes = [
         component: DemonstratorOverviewComponent
       },
       {
-        path: 'errorhandling',
-        component: DemoErrorHandlingComponent
+        path: 'obj',
+        component: DemoObjectCreationComponent
       }
     ]
   }];

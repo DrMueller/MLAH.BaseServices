@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DemoErrorHandlingComponent } from './demo-error-handling.component';
+import { DemoObjectCreationComponent } from './demo-object-creation.component';
 
-describe('DemoErrorHandlingComponent', () => {
-  let component: DemoErrorHandlingComponent;
-  let fixture: ComponentFixture<DemoErrorHandlingComponent>;
+describe('DemoObjectCreationComponent', () => {
+  let component: DemoObjectCreationComponent;
+  let fixture: ComponentFixture<DemoObjectCreationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DemoErrorHandlingComponent ]
+      declarations: [ DemoObjectCreationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DemoErrorHandlingComponent);
+    fixture = TestBed.createComponent(DemoObjectCreationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

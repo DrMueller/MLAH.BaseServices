@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DemonstratorNavigationService } from '../../../common/services';
 
 @Component({
   selector: 'app-demonstrator-overview',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemonstratorOverviewComponent implements OnInit {
 
-  public constructor() { }
+  public constructor(private navigationService: DemonstratorNavigationService) { }
 
   public ngOnInit() {
   }
 
+  public navigateToObjectCreation(): void {
+    this.navigationService.navigateToObjectCreation();
+  }
 
   public throwError(): void {
     throw new Error('Hello Error');

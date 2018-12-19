@@ -1,0 +1,8 @@
+<p> Individual-Fullname: {{ individualFullName }} </p>
+<p> Address-FullStreet {{ individualAddressCompleteStreet }} </p>
+<p> Address2-FullStreet {{ individualAddress2CompleteStreet }} </p>
+
+Individuals:
+<p *ngFor="let orgInd of organisationIndividuals">
+  {{ orgInd.fullName }}
+</p>
