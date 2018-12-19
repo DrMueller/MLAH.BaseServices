@@ -7,7 +7,7 @@ queue:
   demands: npm
 
 variables:
-  LibraryName: 'TODO'
+  LibraryName: 'ng-base-services'
 steps:
 - task: Npm@1
   displayName: 'NPM Install'
