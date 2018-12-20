@@ -13,6 +13,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndividualsModule } from 'src/app/areas/individuals/individuals.module';
 import { OrganisationsModule } from 'src/app/areas/organisations/organisations.module';
+import { environment } from 'src/environments/environment.prod';
+
+const inMemoryHttpModules = [];
+if (environment.useInMemoryHttp) {
+  inMemoryHttpModules.push(
+    HttpClientInMemoryWebApiModule.forRoot(
+      BaseInMemoryDbService, { dataEncapsulation: false },
+    ));
+}
 
 @NgModule({
   declarations: [
@@ -29,9 +38,8 @@ import { OrganisationsModule } from 'src/app/areas/organisations/organisations.m
     HttpClientModule,
     IndividualsModule.forRoot(),
     OrganisationsModule.forRoot(),
-    HttpClientInMemoryWebApiModule.forRoot(
-      BaseInMemoryDbService, { dataEncapsulation: false },
-    )
+    ...inMemoryHttpModules
+
   ],
   providers: [],
   bootstrap: [AppComponent]
