@@ -1,1 +1,1 @@
-export * from './individuals-in-memory-provider.service';
+export * from './individual-in-memory-provider.service';

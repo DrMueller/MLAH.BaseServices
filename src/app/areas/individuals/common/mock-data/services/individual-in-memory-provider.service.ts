@@ -12,7 +12,7 @@ import {
 @Injectable({
   providedIn: 'root'
 })
-export class IndividualsInMemoryProviderService extends BaseInMemoryDataProviderService<Individual> {
+export class IndividualInMemoryProviderService extends BaseInMemoryDataProviderService<Individual> {
   public constructor(
     repository: IndividualLocalStorageRepositoryService,
     @Inject(DTO_ADAPTER_TOKEN) adapters: IDtoAdapterService<Individual, any>[]
