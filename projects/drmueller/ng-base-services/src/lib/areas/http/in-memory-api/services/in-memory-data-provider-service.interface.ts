@@ -1,6 +1,6 @@
 import { AllDtosFetchingResult, DtoOperationResult } from '../models';
 
-export interface IDataProviderservice {
+export interface IInMemoryDataProviderservice {
   updateDto(collectionName: string, dto: any): DtoOperationResult;
 
   deleteDto(collectionName: string, dtoId: any): void;

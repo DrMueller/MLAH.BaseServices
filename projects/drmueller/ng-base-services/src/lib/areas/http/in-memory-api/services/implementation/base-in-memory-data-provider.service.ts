@@ -1,8 +1,8 @@
-import { IDataProviderservice, IDtoAdapterService } from '../';
+import { IInMemoryDataProviderservice as IInMemoryDataProviderservice, IDtoAdapterService } from '..';
 import { BaseLocalStorageRepositoryService } from '../../../../local-storage/services';
 import { AllDtosFetchingResult, DtoOperationResult } from '../../models';
 
-export abstract class BaseDataProviderService<TModel> implements IDataProviderservice {
+export abstract class BaseInMemoryDataProviderService<TModel> implements IInMemoryDataProviderservice {
   private adapters: IDtoAdapterService<TModel, any>[];
 
   public constructor(

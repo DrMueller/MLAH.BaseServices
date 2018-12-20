@@ -13,7 +13,7 @@ import {
   IndividualsOverviewComponent
 } from './overview/components/individuals-overview/individuals-overview.component';
 import { DTO_ADAPTER_TOKEN, DATA_PROVIDER_TOKEN } from 'projects/drmueller/ng-base-services/src/public_api';
-import { IndividualsProviderService } from './common/mock-data/services';
+import { IndividualsInMemoryProviderService } from './common/mock-data/services';
 import { IndividualOverviewEntryAdapterService } from './common/mock-data/services/adapters/individual-overview-entry-adapter.service';
 import { IndividualDetailsAdapterService } from './common/mock-data/services/adapters/individual-details-adapter.service';
 
@@ -39,7 +39,7 @@ export class IndividualsModule {
         {
           provide: DATA_PROVIDER_TOKEN,
           multi: true,
-          useClass: IndividualsProviderService
+          useClass: IndividualsInMemoryProviderService
         },
         {
           provide: DTO_ADAPTER_TOKEN,

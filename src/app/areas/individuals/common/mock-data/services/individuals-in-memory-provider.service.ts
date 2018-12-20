@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 
 import {
-  BaseDataProviderService, DTO_ADAPTER_TOKEN, IDtoAdapterService
+  BaseInMemoryDataProviderService, DTO_ADAPTER_TOKEN, IDtoAdapterService
 } from 'projects/drmueller/ng-base-services/src/public_api';
 
 import { Individual } from '../models';
@@ -12,7 +12,7 @@ import {
 @Injectable({
   providedIn: 'root'
 })
-export class IndividualsProviderService extends BaseDataProviderService<Individual> {
+export class IndividualsInMemoryProviderService extends BaseInMemoryDataProviderService<Individual> {
   public constructor(
     repository: IndividualLocalStorageRepositoryService,
     @Inject(DTO_ADAPTER_TOKEN) adapters: IDtoAdapterService<Individual, any>[]

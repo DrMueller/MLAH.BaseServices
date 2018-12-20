@@ -3,14 +3,14 @@ import { Inject, Injectable } from '@angular/core';
 import { InMemoryDbService, RequestInfo, ResponseOptions } from 'angular-in-memory-web-api';
 import { Observable } from 'rxjs';
 
-import { IDataProviderservice } from '../';
+import { IInMemoryDataProviderservice } from '../';
 import { DATA_PROVIDER_TOKEN } from './constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BaseInMemoryDbService extends InMemoryDbService {
-  public constructor(@Inject(DATA_PROVIDER_TOKEN) private dataProviders: IDataProviderservice[]) {
+  public constructor(@Inject(DATA_PROVIDER_TOKEN) private dataProviders: IInMemoryDataProviderservice[]) {
     super();
   }
 
