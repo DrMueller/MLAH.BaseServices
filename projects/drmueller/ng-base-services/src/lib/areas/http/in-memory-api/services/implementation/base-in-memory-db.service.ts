@@ -27,19 +27,9 @@ export class BaseInMemoryDbService extends InMemoryDbService {
 
   public get(requestInfo: RequestInfo): Observable<Response> | null {
     if (requestInfo.id) {
-      const dtoById = this
-        .dataProviders
-        .map(provider => provider.getDtoById(requestInfo.collectionName, requestInfo.id))
-        .filter(operationResult => operationResult.isSuccess)[0].dto;
-
-      return this.createOkResponse(requestInfo, dtoById);
+      return this.getDtoById(requestInfo);
     } else {
-      const allDtos = this
-        .dataProviders
-        .map(provider => provider.getAllDtos(requestInfo.collectionName))
-        .filter(operationResult => operationResult.isSuccess)[0].dtos;
-
-      return this.createOkResponse(requestInfo, allDtos);
+      return this.getAllDtos(requestInfo);
     }
   }
 
@@ -68,5 +58,31 @@ export class BaseInMemoryDbService extends InMemoryDbService {
       status: 200,
       body: body
     });
+  }
+
+  private getAllDtos(requestInfo: RequestInfo): Observable<Response> | null {
+    const successFullOperations = this
+      .dataProviders
+      .map(provider => provider.getAllDtos(requestInfo.collectionName))
+      .filter(operationResult => operationResult.isSuccess);
+
+    if (successFullOperations.length > 0) {
+      return this.createOkResponse(requestInfo, successFullOperations[0].dtos);
+    }
+
+    return null;
+  }
+
+  private getDtoById(requestInfo: RequestInfo): Observable<Response> | null {
+    const successFullOperations = this
+      .dataProviders
+      .map(provider => provider.getDtoById(requestInfo.collectionName, requestInfo.id))
+      .filter(operationResult => operationResult.isSuccess);
+
+    if (successFullOperations.length > 0) {
+      return this.createOkResponse(requestInfo, successFullOperations[0].dto);
+    }
+
+    return null;
   }
 }
