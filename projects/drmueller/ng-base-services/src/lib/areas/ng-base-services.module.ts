@@ -4,7 +4,7 @@ import { LocalHttpService } from './http/http-base';
 
 @NgModule({
   imports: [
-    CommonModule,
+    CommonModule
   ],
   providers: [
     LocalHttpService
