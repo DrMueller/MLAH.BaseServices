@@ -13,6 +13,6 @@ export class DemonstratorNavigationService {
   }
 
   public navigateToObjectCreation(): void {
-    this.router.navigate(['obj']);
+    this.router.navigate(['/demonstrator/obj']);
   }
 }

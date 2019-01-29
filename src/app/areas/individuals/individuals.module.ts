@@ -1,9 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { TableModule } from 'primeng/table';
-import { RxFormsModule } from 'src/app/infrastructure/shared-features/rx-forms';
+import {
+  DATA_PROVIDER_TOKEN, DTO_ADAPTER_TOKEN
+} from 'projects/drmueller/ng-base-services/src/public_api';
 
+import { IndividualInMemoryProviderService } from './common/mock-data/services';
+import {
+  IndividualDetailsAdapterService
+} from './common/mock-data/services/adapters/individual-details-adapter.service';
+import {
+  IndividualOverviewEntryAdapterService
+} from './common/mock-data/services/adapters/individual-overview-entry-adapter.service';
 import {
   IndividualDetailsComponent
 } from './details/components/individual-details/individual-details.component';
@@ -12,10 +21,7 @@ import { IndividualsComponent } from './individuals.component';
 import {
   IndividualsOverviewComponent
 } from './overview/components/individuals-overview/individuals-overview.component';
-import { DTO_ADAPTER_TOKEN, DATA_PROVIDER_TOKEN } from 'projects/drmueller/ng-base-services/src/public_api';
-import { IndividualInMemoryProviderService } from './common/mock-data/services';
-import { IndividualOverviewEntryAdapterService } from './common/mock-data/services/adapters/individual-overview-entry-adapter.service';
-import { IndividualDetailsAdapterService } from './common/mock-data/services/adapters/individual-details-adapter.service';
+import { RxFormsModule } from 'src/app/infrastructure/shared-features/rx-forms';
 
 @NgModule({
   declarations: [

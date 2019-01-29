@@ -2,9 +2,9 @@
   "name": "@drmueller/ng-base-services",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@drmueller/language-extensions": "^1.0.31",
+    "@angular/common": "~7.1.0",
+    "@angular/core": "~7.1.0",
+    "@drmueller/language-extensions": "~2.1.10",
     "@drmueller/testing": "^2.0.3",
     "angular-in-memory-web-api": "0.7.0"
   }

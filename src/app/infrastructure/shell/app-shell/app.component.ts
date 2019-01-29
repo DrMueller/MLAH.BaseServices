@@ -10,9 +10,9 @@ export class AppComponent {
   public errorInformation: ErrorInformation | null = null;
 
   public constructor(
-    errorHandlingInitializationService: ErrorDispatcherService,
+    errorDispatcherService: ErrorDispatcherService,
     private changeDetectorRef: ChangeDetectorRef) {
-    errorHandlingInitializationService.registerErrorCallback(errorInformation => this.onErrorReceived(errorInformation));
+    errorDispatcherService.registerErrorCallback(errorInformation => this.onErrorReceived(errorInformation));
   }
 
   private onErrorReceived(errorInformation: ErrorInformation) {

@@ -3,11 +3,9 @@ import { ErrorHandler, ModuleWithProviders, NgModule } from '@angular/core';
 
 import { DialogModule } from 'primeng/dialog';
 
-import { ErrorDisplayComponent } from './components/error-display/error-display.component';
+import { ErrorDisplayComponent } from './components/error-display';
 import { CustomErrorHandlerService } from './services/custom-error-handler.service';
-import {
-  ErrorDispatcherService
-} from './services/error-dispatcher.service';
+import { ErrorDispatcherService } from './services/error-dispatcher.service';
 import { ErrorInformationFactoryService } from './services/error-information-factory.service';
 import { ErrorUnwrappingService } from './services/error-unwrapping.service';
 import { IgnoredErrorsService } from './services/ignored-errors.service';

@@ -5,11 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import { provideMock } from '@drmueller/testing';
 
 import { of } from 'rxjs';
-import { RxFormModelBindingService } from 'src/app/infrastructure/shared-features/rx-forms';
 
-import { IndividualsNavigationService } from '../../../common/services';
+import { IndividualsNavigationService } from '../../../common/navigation';
 import { IndividualDetailsDataService, IndividualDetailsFormBuilderService } from '../../services';
 import { IndividualDetailsComponent } from './individual-details.component';
+import { RxFormModelBindingService } from 'src/app/infrastructure/shared-features/rx-forms';
 
 describe('IndividualDetailsComponent', () => {
   let component: IndividualDetailsComponent;

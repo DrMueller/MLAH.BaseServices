@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { provideMock } from '@drmueller/testing';
 
-import { IndividualsNavigationService } from '../../../common/services';
+import { IndividualsNavigationService } from '../../../common/navigation';
 import { IndividualOverviewDataService } from '../../services';
 import { IndividualsOverviewComponent } from './individuals-overview.component';
 

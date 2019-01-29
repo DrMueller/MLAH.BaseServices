@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { BaseInMemoryDbService } from 'projects/drmueller/ng-base-services/src/public_api';
 
-import { RxFormsModule } from '../../shared-features/rx-forms';
 import { AppNavigationModule } from '../app-navigation/app-navigation.module';
 import { ErrorHandlingModule } from '../error-handling';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +13,7 @@ import { AppComponent } from './app.component';
 import { IndividualsModule } from 'src/app/areas/individuals/individuals.module';
 import { OrganisationsModule } from 'src/app/areas/organisations/organisations.module';
 import { environment } from 'src/environments/environment.prod';
+import { RxFormsModule } from '../../shared-features/rx-forms';
 
 const inMemoryHttpModules = [];
 if (environment.useInMemoryHttp) {
@@ -33,13 +33,12 @@ if (environment.useInMemoryHttp) {
     BrowserAnimationsModule,
     AppRoutingModule,
     AppNavigationModule,
-    RxFormsModule.forRoot(),
     ErrorHandlingModule.forRoot(),
     HttpClientModule,
     IndividualsModule.forRoot(),
     OrganisationsModule.forRoot(),
+    RxFormsModule.forRoot(),
     ...inMemoryHttpModules
-
   ],
   providers: [],
   bootstrap: [AppComponent]
