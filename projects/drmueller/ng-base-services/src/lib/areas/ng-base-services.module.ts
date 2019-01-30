@@ -6,8 +6,6 @@ import { NgModule } from '@angular/core';
     CommonModule
   ],
   providers: [
-    // LocalHttpService,
-    // AppSettingsProviderService
   ]
 })
 export class NgBaseServicesModule {
