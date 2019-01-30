@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpXhrBackend, HttpBackend } from '@angular/common/http';
 import { LocalHttpService } from '../../http/http-base/services/local-http.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AppSettingsProviderService<T> {
   private appSettings: T;
 
