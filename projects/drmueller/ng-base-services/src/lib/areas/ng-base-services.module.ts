@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { LocalHttpService } from './http/http-base';
+import { LocalHttpService } from './http/http-base/services/local-http.service';
 
 @NgModule({
   imports: [

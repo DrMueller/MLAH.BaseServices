@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { ObjectFactoryService } from '../../../object-creation';
 import { HttpBaseService } from './http-base.service';
+import { ObjectFactoryService } from '../../../object-creation/services/object-factory.service';
 
 @Injectable()
 export class LocalHttpService extends HttpBaseService {

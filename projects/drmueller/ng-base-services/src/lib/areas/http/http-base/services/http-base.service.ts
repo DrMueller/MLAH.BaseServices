@@ -5,9 +5,9 @@ import { IParameterlessConstructor } from '@drmueller/language-extensions';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
 
-import { ObjectFactoryService } from '../../../object-creation';
 import { ContentType } from '../enums';
 import { HttpBaseServant } from './servants';
+import { ObjectFactoryService } from '../../../object-creation/services/object-factory.service';
 
 export abstract class HttpBaseService {
   protected constructor(

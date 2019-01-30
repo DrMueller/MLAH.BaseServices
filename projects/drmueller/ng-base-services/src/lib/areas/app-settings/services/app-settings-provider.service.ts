@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpXhrBackend, HttpBackend } from '@angular/common/http';
-import { LocalHttpService } from '../../http/http-base';
+import { LocalHttpService } from '../../http/http-base/services/local-http.service';
 
 @Injectable()
 export class AppSettingsProviderService<T> {
@@ -24,7 +24,6 @@ export class AppSettingsProviderService<T> {
       (<any>this.http).httpClient.handler.backend = this.httpXhrBackend;
     }
 
-    // This path needs to be relative to the files in the dist-folder
     this.appSettings = await this.http.getAsync<T>(relativeAppSettingsFilePath);
 
     if (httpBackend) {
