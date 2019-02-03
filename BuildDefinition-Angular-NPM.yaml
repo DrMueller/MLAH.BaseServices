@@ -44,7 +44,7 @@ steps:
 
     customCommand: 'run ci-integration-test-lib'
 
-    condition: succeededOrFailed()
+  condition: succeededOrFailed()
 
   
 - task: PublishTestResults@2
@@ -52,9 +52,9 @@ steps:
   inputs:
     testResultsFiles: '**/testresults/*-tests.xml'
 
-    condition: succeededOrFailed()
-
     failTaskOnFailedTests: true
+
+  condition: succeededOrFailed()
 
 
 - task: Npm@1
