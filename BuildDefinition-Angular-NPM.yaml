@@ -32,7 +32,7 @@ steps:
 
     verbose: false
 
-    customCommand: 'run unit-test-lib'
+    customCommand: 'run ci-unit-test-lib'
 
 
 - task: PublishTestResults@2
@@ -50,7 +50,7 @@ steps:
 
     verbose: false
 
-    customCommand: 'run integration-test-lib'
+    customCommand: 'run ci-integration-test-lib'
 
 
 - task: PublishTestResults@2
@@ -68,7 +68,7 @@ steps:
 
     verbose: false
 
-    customCommand: 'run build-lib-prod'
+    customCommand: 'run ci-build-lib-prod'
 
 
 - task: Npm@1
