@@ -52,7 +52,9 @@ steps:
 
     customCommand: 'run ci-integration-test-lib'
 
+  condition: succeededOrFailed()
 
+  
 - task: PublishTestResults@2
   displayName: 'Publish Integration Tests Result'
   inputs:
