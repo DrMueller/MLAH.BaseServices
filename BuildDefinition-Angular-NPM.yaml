@@ -10,13 +10,13 @@ variables:
   LibraryName: 'ng-base-services'
 steps:
 - task: Npm@1
-  displayName: 'NPM Install'
+  displayName: 'Install NPM Packages'
   inputs:
     verbose: false
 
 
 - task: Npm@1
-  displayName: 'NPM NG Lint'
+  displayName: 'Lint'
   inputs:
     command: custom
 
@@ -26,7 +26,7 @@ steps:
 
 
 - task: Npm@1
-  displayName: 'NPM NG Unit Tests'
+  displayName: 'Run Unit Tests'
   inputs:
     command: custom
 
@@ -34,8 +34,35 @@ steps:
 
     customCommand: 'run unit-test-lib'
 
+
+- task: PublishTestResults@2
+  displayName: 'Publish Unit Tests Result'
+  inputs:
+    testResultsFiles: '**/testresults/unit-tests.xml'
+
+  condition: succeededOrFailed()
+
+
 - task: Npm@1
-  displayName: 'NPM Build Prod'
+  displayName: 'Run Integration Tests'
+  inputs:
+    command: custom
+
+    verbose: false
+
+    customCommand: 'run integration-test-lib'
+
+
+- task: PublishTestResults@2
+  displayName: 'Publish Integration Tests Result'
+  inputs:
+    testResultsFiles: '**/testresults/integration-tests.xml'
+
+  condition: succeededOrFailed()
+
+
+- task: Npm@1
+  displayName: 'Build Prod'
   inputs:
     command: custom
 
@@ -45,7 +72,7 @@ steps:
 
 
 - task: Npm@1
-  displayName: 'NPM Update Version'
+  displayName: 'Update Version'
   inputs:
     command: custom
 
@@ -57,7 +84,7 @@ steps:
 
 
 - task: Npm@1
-  displayName: 'NPM Publish'
+  displayName: 'Publish'
   inputs:
     command: custom
 

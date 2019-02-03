@@ -156,7 +156,7 @@
           "options": {
             "main": "projects/drmueller/ng-base-services/main-unit-tests.ts",
             "tsConfig": "projects/drmueller/ng-base-services/tsconfig.unit-tests.spec.json",
-            "karmaConfig": "projects/drmueller/ng-base-services/karma.unit-tests.conf.js"
+            "karmaConfig": "projects/drmueller/ng-base-services/karma-ci-unit-tests.conf.js"
           }
         },
         "integration-test": {
@@ -164,7 +164,7 @@
           "options": {
             "main": "projects/drmueller/ng-base-services/main-integration-tests.ts",
             "tsConfig": "projects/drmueller/ng-base-services/tsconfig.integration-tests.spec.json",
-            "karmaConfig": "projects/drmueller/ng-base-services/karma.integration-tests.conf.js"
+            "karmaConfig": "projects/drmueller/ng-base-services/karma-ci-integration-tests.conf.js"
           }
         },
         "lint": {
