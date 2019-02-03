@@ -9,6 +9,6 @@ describe('ObjectFactoryService', () => {
   });
 
   it('should be created', inject([ObjectFactoryService], (sut: ObjectFactoryService) => {
-    expect(sut).toBeTruthy();
+    expect(sut).toBeFalsy();
   }));
 });
