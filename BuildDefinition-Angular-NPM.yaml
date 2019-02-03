@@ -35,15 +35,6 @@ steps:
     customCommand: 'run ci-unit-test-lib'
 
 
-- task: PublishTestResults@2
-  displayName: 'Publish Unit Tests Result'
-  inputs:
-    testResultsFiles: '**/testresults/unit-tests.xml'
-    mergeTestResults: true
-
-  condition: succeededOrFailed()
-
-
 - task: Npm@1
   displayName: 'Run Integration Tests'
   inputs:
@@ -57,9 +48,9 @@ steps:
 
   
 - task: PublishTestResults@2
-  displayName: 'Publish Integration Tests Result'
+  displayName: 'Publish Test Results'
   inputs:
-    testResultsFiles: '**/testresults/integration-tests.xml'
+    testResultsFiles: '**/testresults/*-tests.xml'
     mergeTestResults: true
 
   condition: succeededOrFailed()
