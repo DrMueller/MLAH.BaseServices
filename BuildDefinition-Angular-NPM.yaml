@@ -52,8 +52,6 @@ steps:
 
     failTaskOnFailedTests: true
 
-    mergeTestResults: true
-
 
 - task: Npm@1
   displayName: 'Build Prod'
