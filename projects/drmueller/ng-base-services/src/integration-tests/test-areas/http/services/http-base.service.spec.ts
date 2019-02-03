@@ -45,7 +45,7 @@ describe('TestHttpService', () => {
 
     // Assert
     it('Calls http client for deletion', () => {
-      expect(httpClientMock.delete).toBeUndefined();
+      expect(httpClientMock.delete).toHaveBeenCalled();
     });
 
     it('Passes correct URL and options', () => {

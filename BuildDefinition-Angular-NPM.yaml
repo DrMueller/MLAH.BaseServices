@@ -50,6 +50,8 @@ steps:
   inputs:
     testResultsFiles: '**/testresults/*-tests.xml'
 
+    condition: succeededOrFailed()
+
     failTaskOnFailedTests: true
 
 
