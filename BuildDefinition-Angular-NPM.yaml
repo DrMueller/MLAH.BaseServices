@@ -54,7 +54,7 @@ steps:
 
 
 - task: Npm@1
-  displayName: 'Build Prod'
+  displayName: 'Build for Production'
   inputs:
     command: custom
 
