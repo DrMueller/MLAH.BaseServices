@@ -170,6 +170,20 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
+            "format": "junit",
+            "silent": true,
+            "tsConfig": [
+              "projects/drmueller/ng-base-services/tsconfig.lib.json",
+              "projects/drmueller/ng-base-services/tsconfig.unit-tests.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "ci-lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
             "tsConfig": [
               "projects/drmueller/ng-base-services/tsconfig.lib.json",
               "projects/drmueller/ng-base-services/tsconfig.unit-tests.spec.json"

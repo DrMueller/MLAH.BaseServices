@@ -22,7 +22,7 @@ steps:
 
     verbose: false
 
-    customCommand: 'run ng lint'
+    customCommand: 'run ci-lint-lib'
 
 
 - task: Npm@1
