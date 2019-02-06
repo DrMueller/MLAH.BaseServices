@@ -12,7 +12,6 @@
     "ci-unit-test-lib": "ng run @drmueller/ng-base-services:unit-test",
     "ci-integration-test-lib": "ng run @drmueller/ng-base-services:integration-test",
     "ci-lint-lib2": "ng run @drmueller/ng-base-services:ci-lint  > projects/drmueller/ng-base-services/testresults/lint-tests.xml",
-    "ci-lint-lib": "ng lint --format junit  > tslint-result.xml"
   },
   "private": true,
   "dependencies": {
