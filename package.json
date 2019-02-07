@@ -11,7 +11,7 @@
     "ci-build-lib-prod": "ng build @drmueller/ng-base-services --prod",
     "ci-unit-test-lib": "ng run @drmueller/ng-base-services:unit-test",
     "ci-integration-test-lib": "ng run @drmueller/ng-base-services:integration-test",
-    "ci-lint-lib": "ng run @drmueller/ng-base-services:ci-lint  > projects/drmueller/ng-base-services/testresults/lint-tests.xml"
+    "ci-lint-lib": "tslint --project projects/drmueller/ng-base-services/tslint.json --format junit --out projects/drmueller/ng-base-services/testresults/lint-tests.xml"
   },
   "private": true,
   "dependencies": {
