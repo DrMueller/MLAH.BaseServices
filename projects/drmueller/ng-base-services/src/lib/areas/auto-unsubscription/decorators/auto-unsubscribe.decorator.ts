@@ -6,7 +6,7 @@ export function AutoUnsubscribe(...blackListSubscriptionPropertyNames: string[])
             Object.keys(this).forEach(propKey => {
                 const property = this[propKey];
 
-                if (!blackListSubscriptionPropertyNames.includes(propKey)) {
+                if (blackListSubscriptionPropertyNames.indexOf(propKey) === -1) {
                     if (property && typeof property.unsubscribe === 'function') {
                         property.unsubscribe();
                     }
