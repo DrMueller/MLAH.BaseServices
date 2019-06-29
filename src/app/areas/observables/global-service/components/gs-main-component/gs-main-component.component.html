@@ -1,0 +1,20 @@
+<p>
+  ATTENTION: We rmove just 1 subscription per click, since we blacklist the one in gs-sub2.
+</p>
+<p>
+  Amount of subscriptions: {{ subscriptions }}
+</p>
+
+<p>
+  <button class="btn btn-primary btn-main" (click)="sayHello()">Say Hello</button>
+  <button class="btn btn-primary" (click)="switchSubComponents()">Switch Sub Components</button>
+</p>
+
+<p>
+  GS Main Component: {{ hello }}
+</p>
+
+<div *ngIf="subComponentsVisible">
+  <app-gs-sub1-component></app-gs-sub1-component>
+  <app-gs-sub2-component></app-gs-sub2-component>
+</div>

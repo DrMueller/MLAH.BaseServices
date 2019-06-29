@@ -1,0 +1,17 @@
+<p>
+   Amount of subscriptions: {{ subscriptions }}
+</p>
+
+<p>
+  <button class="btn btn-primary btn-main" (click)="sayHello()">Say Hello</button>
+  <button class="btn btn-primary" (click)="switchSubComponents()">Switch Sub Components</button>
+</p>
+
+<p>
+  ML Main Component: {{ hello }}
+</p>
+
+<div *ngIf="subComponentsVisible">
+  <app-ml-sub1-component></app-ml-sub1-component>
+  <app-ml-sub2-component></app-ml-sub2-component>
+</div>

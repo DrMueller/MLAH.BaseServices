@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'demonstrator',
     loadChildren: 'src/app/areas/demonstrator/demonstrator.module#DemonstratorModule'
   },
+  {
+    path: 'observables',
+    loadChildren: 'src/app/areas/observables/observables.module#ObservablesModule'
+  },
 ];
 
 @NgModule({

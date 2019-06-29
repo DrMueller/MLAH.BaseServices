@@ -11,6 +11,7 @@ export class AppNavigationEntryFactoryService {
     const result = new Array<AppNavigationEntry>();
 
     result.push(new AppNavigationEntry('Individuals', '/individuals'));
+    result.push(new AppNavigationEntry('Observables', '/observables'));
     result.push(new AppNavigationEntry('Demonstrator', '/demonstrator'));
 
     return result;

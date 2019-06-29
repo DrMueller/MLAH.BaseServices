@@ -13,3 +13,5 @@ export * from './lib/areas/http/in-memory-api/models';
 export * from './lib/areas/local-storage/services';
 export * from './lib/areas/local-storage/models';
 export * from './lib/areas/app-settings/services';
+export * from './lib/areas/auto-unsubscription/decorators';
+
